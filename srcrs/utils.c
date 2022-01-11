@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:50:53 by jforner           #+#    #+#             */
-/*   Updated: 2022/01/06 12:25:46 by jforner          ###   ########.fr       */
+/*   Updated: 2022/01/11 12:39:45 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@ void	ft_putchar_fd(char c, int fd)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
+	if (!s || s == NULL)
+		ft_putchar_fd (0, fd);
+	else
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		while (*s)
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
 	}
 }
 /*
